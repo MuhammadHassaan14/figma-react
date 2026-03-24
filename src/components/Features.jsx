@@ -90,38 +90,36 @@ export default function Features() {
           </p>
         </div>
 
-        <div
-          className="features-grid"
-          style={{
-            ...styles.grid,
-            gridTemplateColumns: `repeat(${cols}, 1fr)`,
-          }}
-        >
-          {features.map((f, i) => (
-            <div
-              key={i}
-              className="feature-card"
-              style={styles.card}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = "scale(1.02)"
-                e.currentTarget.style.boxShadow = "0 20px 50px rgba(0,0,0,0.13)"
-                e.currentTarget.style.borderColor = "#e8432d"
-                e.currentTarget.style.zIndex = "10"
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = "scale(1)"
-                e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.05)"
-                e.currentTarget.style.borderColor = "#efefef"
-                e.currentTarget.style.zIndex = "0"
-              }}
-            >
-              <div style={styles.iconWrap}>
-                <span style={styles.emoji}>{f.emoji}</span>
+        <div style={{ position: "relative" }}>
+          <div
+            className="features-grid"
+            style={{
+              ...styles.grid,
+              gridTemplateColumns: `repeat(${cols}, 1fr)`,
+            }}
+          >
+            {features.map((f, i) => (
+              <div
+                key={i}
+                className="feature-card"
+                style={{ ...styles.card }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.boxShadow = "0 20px 50px rgba(232,67,45,0.18)"
+                  e.currentTarget.style.borderColor = "#e8432d"
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.05)"
+                  e.currentTarget.style.borderColor = "#efefef"
+                }}
+              >
+                <div style={styles.iconWrap}>
+                  <span style={styles.emoji}>{f.emoji}</span>
+                </div>
+                <h3 style={styles.cardTitle}>{f.title}</h3>
+                <p style={styles.cardDesc}>{f.desc}</p>
               </div>
-              <h3 style={styles.cardTitle}>{f.title}</h3>
-              <p style={styles.cardDesc}>{f.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </>
@@ -160,7 +158,7 @@ const styles = {
     gap: "20px",
     maxWidth: "1100px",
     margin: "0 auto",
-    isolation: "isolate",
+    alignItems: "stretch",   // all cards in a row stretch to same height
   },
   card: {
     background: "white",
@@ -168,11 +166,13 @@ const styles = {
     padding: "28px 24px",
     border: "1.5px solid #efefef",
     boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
-    transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+    transition: "box-shadow 0.25s ease, border-color 0.25s ease",
     cursor: "default",
     boxSizing: "border-box",
     position: "relative",
-    zIndex: 0,
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
   iconWrap: {
     width: "48px",

@@ -231,6 +231,7 @@ const styles = {
     fontFamily: "'Nunito', sans-serif",
     display: "flex",
     flexDirection: "column",
+    margin: -8,
     padding: "0 5vw",
     boxSizing: "border-box",
     overflow: "visible",   // CRITICAL — allows phone to bleed below
