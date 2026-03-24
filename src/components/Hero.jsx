@@ -1,7 +1,8 @@
 import { useRef, useState, useEffect } from "react"
 import { useGSAP } from "@gsap/react"
-import gsap from "gsap";
-import appScreenshot from '../assets/appScreenshot.jpg'
+import gsap from "gsap"
+import appScreenshot from '../assets/appScreenshot.jpg';
+
 gsap.registerPlugin(useGSAP)
 
 export default function Hero() {
@@ -15,9 +16,13 @@ export default function Hero() {
   const navRef = useRef()
 
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
+  const [isSmall, setIsSmall] = useState(() => window.innerWidth < 480)
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+      setIsSmall(window.innerWidth < 480)
+    }
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
@@ -106,7 +111,8 @@ export default function Hero() {
         <div style={{
           ...styles.grid,
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-          paddingBottom: isMobile ? "0" : "40px",
+          alignItems: isMobile ? "center" : "center",
+          paddingBottom: isMobile ? "20px" : "0",
         }}>
           {/* LEFT */}
           <div style={{
@@ -153,15 +159,17 @@ export default function Hero() {
           {/* RIGHT — Phone */}
           <div style={{
             ...styles.right,
-            minHeight: isMobile ? "360px" : "500px",
-            marginTop: isMobile ? "20px" : "0",
+            minHeight: isSmall ? "280px" : isMobile ? "360px" : "500px",
+            marginTop: isMobile ? "16px" : "0",
+            display: isSmall ? "flex" : "flex",
           }}>
             {/* Badge 1 */}
             <div ref={badge1Ref} style={{
               ...styles.badge,
               top: isMobile ? "2%" : "8%",
-              left: isMobile ? "0%" : "-5%",
-              padding: isMobile ? "8px 14px" : "10px 18px",
+              left: isMobile ? "2%" : "-5%",
+              padding: isMobile ? "6px 12px" : "10px 18px",
+              display: isSmall ? "none" : "flex",
             }}>
               <span style={styles.badgeIcon}>🔥</span>
               <span style={{ ...styles.badgeText, fontSize: isMobile ? "11px" : "13px" }}>
@@ -172,7 +180,12 @@ export default function Hero() {
             {/* Phone Device Frame */}
             <div ref={imageSlotRef} style={{
               ...styles.phoneDevice,
-              width: isMobile ? "clamp(160px, 45vw, 210px)" : "clamp(220px, 26vw, 290px)",
+              width: isSmall
+                ? "clamp(120px, 55vw, 170px)"
+                : isMobile
+                  ? "clamp(160px, 42vw, 200px)"
+                  : "clamp(220px, 26vw, 290px)",
+              marginBottom: isSmall ? "-60px" : isMobile ? "-80px" : "-120px",
             }}>
               <div style={styles.volUp} />
               <div style={styles.volDown} />
@@ -181,9 +194,9 @@ export default function Hero() {
                 <div style={styles.phoneScreen}>
                   <div style={styles.notch} />
                     <img
-                    src={appScreenshot}
-                    alt="App preview"
-                    style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "28px" }}
+                      src={appScreenshot}
+                      alt="App preview"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "28px" }}
                     />
                   <div style={styles.screenContent}>
                     <span style={styles.placeholderText}>Insert App Screenshot Here</span>
@@ -196,8 +209,9 @@ export default function Hero() {
             <div ref={badge2Ref} style={{
               ...styles.badge,
               bottom: isMobile ? "2%" : "10%",
-              right: isMobile ? "0%" : "-5%",
-              padding: isMobile ? "8px 14px" : "10px 18px",
+              right: isMobile ? "2%" : "-5%",
+              padding: isMobile ? "6px 12px" : "10px 18px",
+              display: isSmall ? "none" : "flex",
             }}>
               <span style={styles.badgeIcon}>🌐</span>
               <span style={{ ...styles.badgeText, fontSize: isMobile ? "11px" : "13px" }}>
@@ -214,14 +228,14 @@ export default function Hero() {
 const styles = {
   section: {
     background: "#e8432d",
-    minHeight: "100vh",
     fontFamily: "'Nunito', sans-serif",
     display: "flex",
     flexDirection: "column",
     padding: "0 5vw",
     boxSizing: "border-box",
-    overflow: "hidden",
+    overflow: "visible",   // CRITICAL — allows phone to bleed below
     position: "relative",
+    zIndex: 1,
   },
 
   // NAV
@@ -248,10 +262,8 @@ const styles = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     alignItems: "center",
-    flex: 1,
     gap: "40px",
-    paddingBottom: "40px",
-    // Responsive handled via inline media below (see wrapper div trick)
+    paddingBottom: "0",
   },
 
   // LEFT
@@ -260,6 +272,8 @@ const styles = {
     flexDirection: "column",
     gap: "20px",
     zIndex: 1,
+    paddingBottom: "80px",
+    paddingTop: "40px",
   },
   heading: {
     display: "flex",
@@ -304,14 +318,15 @@ const styles = {
     position: "relative",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
-    minHeight: "500px",
+    alignItems: "flex-end",
+    paddingTop: "40px",
   },
   // PHONE DEVICE FRAME
   phoneDevice: {
     position: "relative",
     width: "clamp(220px, 26vw, 290px)",
-    zIndex: 1,
+    zIndex: 10,
+    marginBottom: "-120px",  // bleeds 120px below the red section
   },
   phoneFrame: {
     background: "linear-gradient(145deg, #2a2a2a, #111)",
