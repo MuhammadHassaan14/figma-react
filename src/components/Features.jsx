@@ -136,6 +136,7 @@ const styles = {
     zIndex: 0,
   },
   header: {
+    padding: "25px",
     textAlign: "center",
     marginBottom: "48px",
   },
