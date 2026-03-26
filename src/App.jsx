@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import AboutUs from './components/AboutUs'
 import HowItWorks from "./components/HowItWorks"
+import CTASection from "./components/CTASection"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Features/>
       <AboutUs/>
       <HowItWorks/>
+      <CTASection />
     </div>
   )
 }
