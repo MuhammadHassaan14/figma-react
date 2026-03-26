@@ -4,6 +4,7 @@ import Features from './components/Features'
 import AboutUs from './components/AboutUs'
 import HowItWorks from "./components/HowItWorks"
 import CTASection from "./components/CTASection"
+import Testimonials from "./components/Testimonials"
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Features/>
       <AboutUs/>
       <HowItWorks/>
-      <CTASection />
+      <CTASection/>
+      <Testimonials/>
     </div>
   )
 }
