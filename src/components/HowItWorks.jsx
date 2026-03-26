@@ -235,7 +235,7 @@ const styles = {
 
   title: {
     fontSize: "clamp(26px, 3.5vw, 48px)",
-    fontWeight: "900",
+    fontWeight: "800",
     color: "#111",
     margin: "0 0 14px",
     letterSpacing: "-0.5px",
@@ -245,7 +245,7 @@ const styles = {
   subtitle: {
     fontSize: "clamp(13px, 1.1vw, 16px)",
     color: "#888",
-    fontWeight: "500",
+    fontWeight: "700",
     margin: 0,
     lineHeight: "1.6",
     maxWidth: "560px",
@@ -272,7 +272,7 @@ const styles = {
 
   number: {
     fontSize: "clamp(22px, 2.5vw, 32px)",
-    fontWeight: "900",
+    fontWeight: "800",
     letterSpacing: "-1px",
     lineHeight: 1,
   },
@@ -320,7 +320,7 @@ const styles = {
 
   mobileNumber: {
     fontSize: "20px",
-    fontWeight: "900",
+    fontWeight: "800",
     letterSpacing: "-0.5px",
     width: "40px",
     height: "40px",
@@ -364,7 +364,7 @@ const styles = {
 
   cardTitle: {
     fontSize: "clamp(15px, 1.2vw, 19px)",
-    fontWeight: "900",
+    fontWeight: "800",
     color: "#111",
     margin: "0 0 10px",
     letterSpacing: "-0.3px",
@@ -375,6 +375,6 @@ const styles = {
     color: "#888",
     margin: 0,
     lineHeight: "1.65",
-    fontWeight: "500",
+    fontWeight: "700",
   },
 }

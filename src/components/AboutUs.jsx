@@ -451,7 +451,7 @@ const styles = {
 
   heading: {
     fontSize: "clamp(28px, 3vw, 46px)",
-    fontWeight: "900",
+    fontWeight: "800",
     color: "#111",
     margin: 0,
     lineHeight: 1.15,
@@ -463,7 +463,7 @@ const styles = {
     color: "#888",
     lineHeight: "1.7",
     margin: 0,
-    fontWeight: "500",
+    fontWeight: "700",
     maxWidth: "460px",
   },
 
@@ -497,7 +497,7 @@ const styles = {
 
   featureTitle: {
     fontSize: "clamp(13px, 1vw, 15px)",
-    fontWeight: "800",
+    fontWeight: "850",
     color: "#111",
     margin: "0 0 4px",
   },
@@ -507,6 +507,6 @@ const styles = {
     color: "#888",
     margin: 0,
     lineHeight: "1.6",
-    fontWeight: "500",
+    fontWeight: "700",
   },
 }

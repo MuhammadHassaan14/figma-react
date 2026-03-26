@@ -286,7 +286,7 @@ const styles = {
   headingLine: {
     display: "block",
     fontSize: "clamp(36px, 5vw, 64px)",
-    fontWeight: "900",
+    fontWeight: "800",
     color: "white",
     lineHeight: 1.1,
     letterSpacing: "-1px",
@@ -297,7 +297,7 @@ const styles = {
     lineHeight: "1.7",
     maxWidth: "420px",
     margin: 0,
-    fontWeight: "500",
+    fontWeight: "700",
   },
   btn: {
     alignSelf: "flex-start",

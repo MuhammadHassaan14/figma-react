@@ -142,7 +142,7 @@ const styles = {
   },
   title: {
     fontSize: "clamp(24px, 3.5vw, 48px)",
-    fontWeight: "900",
+    fontWeight: "800",
     color: "#111",
     margin: "0 0 12px",
     letterSpacing: "-0.5px",
@@ -151,7 +151,7 @@ const styles = {
   subtitle: {
     fontSize: "clamp(13px, 1.3vw, 17px)",
     color: "#777",
-    fontWeight: "600",
+    fontWeight: "750",
     margin: 0,
   },
   grid: {
@@ -191,7 +191,7 @@ const styles = {
   },
   cardTitle: {
     fontSize: "clamp(14px, 1.1vw, 18px)",
-    fontWeight: "800",
+    fontWeight: "850",
     color: "#111",
     margin: "0 0 10px",
     letterSpacing: "-0.2px",
@@ -201,6 +201,6 @@ const styles = {
     color: "#777",
     lineHeight: "1.65",
     margin: 0,
-    fontWeight: "500",
+    fontWeight: "700",
   },
 }

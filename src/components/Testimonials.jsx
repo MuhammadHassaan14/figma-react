@@ -218,7 +218,7 @@ const styles = {
 
   title: {
     fontSize: "clamp(26px, 3vw, 44px)",
-    fontWeight: "900",
+    fontWeight: "800",
     color: "#111",
     textAlign: "center",
     margin: "0 0 48px",
@@ -264,7 +264,7 @@ const styles = {
     color: "#444",
     lineHeight: "1.7",
     margin: 0,
-    fontWeight: "500",
+    fontWeight: "800",
     flex: 1,
   },
 
@@ -285,14 +285,14 @@ const styles = {
 
   authorName: {
     fontSize: "13px",
-    fontWeight: "800",
+    fontWeight: "900",
     color: "#111",
   },
 
   authorCountry: {
     fontSize: "11px",
     color: "#999",
-    fontWeight: "600",
+    fontWeight: "800",
   },
 
   // Gradient fade at bottom of grid when collapsed

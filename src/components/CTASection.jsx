@@ -180,7 +180,6 @@ const styles = {
     boxSizing: "border-box",
     overflow: "hidden",       // clips phones below section bottom edge
     position: "relative",
-    margin: "-2.6%"
   },
 
   inner: {
@@ -201,7 +200,7 @@ const styles = {
 
   heading: {
     fontSize: "clamp(28px, 3.5vw, 52px)",
-    fontWeight: "900",
+    fontWeight: "800",
     color: "white",
     margin: 0,
     lineHeight: 1.1,
@@ -213,7 +212,7 @@ const styles = {
     color: "rgba(255,255,255,0.85)",
     lineHeight: "1.7",
     margin: 0,
-    fontWeight: "500",
+    fontWeight: "800",
     maxWidth: "400px",
   },
 
